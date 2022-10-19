@@ -1,0 +1,25 @@
+{
+  "name": "flashdown-language-support",
+  "displayName": "Flashdown language support",
+  "description": "Add support for Flashdown files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "flashdown",
+      "aliases": ["Flashdown", "flashdown"],
+      "extensions": [".flashdown",".fd"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "flashdown",
+      "scopeName": "source.flashdown",
+      "path": "./syntaxes/flashdown.tmLanguage.json"
+    }]
+  }
+}

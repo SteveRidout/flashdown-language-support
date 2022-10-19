@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Flashdown",
+	"patterns": [
+		{
+			"include": "#topic"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#note"
+		},
+		{
+			"include": "#card"
+		},
+		{
+			"include": "#invalid"
+		}
+	],
+	"repository": {
+		"topic": {
+			"name": "markup.heading.flashdown",
+			"match": "^#(.*)"
+		},
+		"comment": {
+			"name": "comment.line.flashdown",
+			"match": "^\\w*\/\/(.*)"
+		},
+		"note": {
+			"name": "note.flashdown",
+			"match": "^[ ]{2}[^ ](.*)"
+		},
+		"card": {
+			"name": "card.flashdown",
+			"match": "^([^ ][^:]+):(.*)",
+			"captures": {
+				"1": {
+					"name": "entity.name.function"
+				},
+				"2": {
+					"name": "string.unquoted.back.card.flashdown"
+				}
+			}
+		},
+		"invalid": {
+			"name": "invalid.illegal.flashdown",
+			"match": ".*"
+		}
+	},
+	"scopeName": "source.flashdown"
+}
